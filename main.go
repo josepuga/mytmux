@@ -12,7 +12,7 @@ import (
 
 var VERSION string = "..."
 var tmuxPath string // Safe use with `which`
-const usage = `MyTmux. v%s
+const usage = `MyTmux. %s
 Automates the creation of sessions and windows in Tmux
 (c)José Puga 2025. Under GPL 3 License.
 Usage: %s <tmux workspaces ini>
@@ -66,7 +66,7 @@ func realMain() int {
 			}
 			tmw.Title = k
 			if after, ok := strings.CutPrefix(tmw.Title, "*"); ok {
-                tmw.Title = after
+				tmw.Title = after
 				tms.DefaultWindow = after
 			}
 			v := ini.GetStringSlice(section, k, "", ";")

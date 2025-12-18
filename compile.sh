@@ -6,4 +6,4 @@ app_name=mytmux
 version=$(git describe --tags)
 ldflags="-s -w -X main.VERSION=${version}"
 go fmt && go mod tidy && \
-go build "${ldflags}" -o "bin/${app_name}"
+go build -ldflags="${ldflags}" -o "bin/${app_name}"
